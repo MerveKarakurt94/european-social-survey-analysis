@@ -1,17 +1,19 @@
 import csv
 import collections
 
-cntries = collections.Counter()
+count_country = collections.Counter()
 country = []
 count = []
 
-with open("ESS10.csv") as file:
-    for line in csv.reader(file, delimiter=","):
-        if line[5] == "cntry":
-            continue
-        cntries[line[5]] += 1
+with open("ESS10.csv", newline="") as csvfile:
+    reader = csv.reader(csvfile, delimiter=",")
+    header = next(reader)
+    country_column = header.index("cntry")
 
-    for key in cntries:
-        value = cntries[key]
+    for line in reader:
+        count_country[line[country_column]] += 1
+
+    for key in count_country:
+        value = count_country[key]
         country.append(key)
         count.append(value)
