@@ -1,4 +1,5 @@
 from countries import country, count
+from household_income
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
