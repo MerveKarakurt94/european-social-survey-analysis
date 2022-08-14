@@ -2,6 +2,8 @@ import csv
 import collections
 
 cntries = collections.Counter()
+country = []
+count = []
 
 with open("ESS10.csv") as file:
     for line in csv.reader(file, delimiter=","):
@@ -9,4 +11,7 @@ with open("ESS10.csv") as file:
             continue
         cntries[line[5]] += 1
 
-print(cntries.most_common())
+    for key in cntries:
+        value = cntries[key]
+        country.append(key)
+        count.append(value)
