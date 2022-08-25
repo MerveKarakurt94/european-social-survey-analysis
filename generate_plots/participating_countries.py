@@ -24,7 +24,7 @@ fig = px.bar(x=country, y=count,
                  "x": "Country",
                  "y": "Number of Participants"
              },
-             title="Number of Participants per Country")
+             title="Figure 1: Number of Participants per Country")
 
 fig.update_layout(
     margin=dict(l=0, r=0, t=30, b=0),
